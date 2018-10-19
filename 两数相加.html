@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let l1 = {
+			val: 2,
+			next: {
+				val: 4,
+				next: {
+					val: 3,
+					next: null
+				}
+			}
+		}
+		let b = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1];
+		1000000000000000000000000000001
+		1000000000000000000000000000000
+		let bbj = {};
+		recursion1(b, bbj)
+		console.log('bbj',bbj)
+	  	let l2 = {
+	  		val: 5,
+	  		next: {
+	  			val: 6,
+	  			next: {
+	  				val: 4,
+	  				next: null
+	  			}
+	  		}
+	  	}
+	  	function recursion(val) {
+	  		if(val.next!=null) {
+	  			return val.val.toString()+recursion(val.next);
+	  		} else {
+	  			return val.val||'';
+	  		}
+	  	}
+	  	function recursion1(val, obj) {
+	  		if(val.length>=1) {
+	  			obj.val = val[0];
+		  		val.shift()
+		  		obj.next = {}
+		  		return recursion1(val, obj.next);
+	  		} else {
+	  			return obj;
+	  		}
+	  	}
+	  	let sum = Number(recursion(bbj).toString().split('').reverse().join(""))+Number(recursion(l2).toString().split('').reverse().join(""))
+	  	// sum = String(sum).split('').reverse()
+	  	// sum = sum.map(function(item){
+	   //      return Number(item);
+	   //  })
+	  	console.log(eval('2e+30'.replace(/\d?e/g,Math.exp(2))))
+	   num = (sum).toLocaleString();  
+	  	console.log(num)
+	   num = num.toString().replace(/\$|\,/g, '');     
+	  	console.log(num)
+			// var num = new Number(sum);
+			s=(num+'').substring(0,num.length-(30+'').length)
+			console.log((num+'').length, (30+'').length, s+30);
+			console.log(Math.exp(1))
+	</script>
+</body>
+</html>
