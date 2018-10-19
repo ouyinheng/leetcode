@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>通配符匹配</title>
+</head>
+<body>
+	<script>
+		var isMatch = function(s, p) {
+		    let arr1 = s.split('');
+		    let arr2 = p.split('');
+		    if(p=='*')return true;
+		    if(s.length==1&&p=='?')return true;
+		    let star = p.split('*').length>1?true:false    
+		    if(star) {
+		        
+		    } else {
+		        if(arr1.length!=arr2.length)return false;
+		        let i=0;
+		        arr1.forEach((item, index)=>{
+		            if(item == arr2[index]||arr2[index]=='?')i++
+		        })
+		        if(i==arr1.length)return true;
+		        else return false;
+		    }
+		    return false;
+		};
+		console.log(isMatch('aa', '*'))
+	</script>
+</body>
+</html>

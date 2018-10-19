@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var combinationSum = function(candidates, target) {
+		    let sumList = [];
+		    candidates.map((item, index)=>{
+		    	let arr = []
+		    	let sub = target/item;
+		    	if(sub%1==0){
+		    		while(arr.length<sub) {
+		    			arr.push(item)
+		    		}
+		    	}
+		    	if(arr.length>0)
+		    	sumList.push(arr)
+		    })
+		    console.log(sumList)
+		};
+		combinationSum([2,3,6, 7], 7);
+	</script>
+</body>
+</html>

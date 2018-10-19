@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let bool = true
+		function fa(dividend, divisor, i) {
+			if(divisor<0) {
+				divisor = divisor*-1
+				bool = false;
+			}
+			let sub = dividend - Number(divisor);
+			i++;
+			if(sub>divisor)return fa(sub, divisor, i)
+			if(!bool)i = i*-1;
+			return i;
+		}
+		var divide = function(dividend, divisor) {
+			let i=0;
+			i = fa(dividend, divisor, i);
+			return i;
+		}
+		console.log(divide(7, -3))
+	</script>
+</body>
+</html>

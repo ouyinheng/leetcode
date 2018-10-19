@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var multiply = function(num1, num2) {
+			if(num1==0||num2==0) return '0';
+			let arr1 = num1.split('')
+			let arr2 = [];
+			let arr3 = [];
+			let array4 = [];
+			let center = 0;
+			let len = 0;
+			let s = '';
+			arr1.forEach((item, index)=>{
+				let zero = ''
+				while(arr1.length-index-1-zero.length!=0) {
+					zero +='0'
+				}
+				let str = Number(item)*Number(num2)+zero;
+				arr2.push(str.split('').reverse())
+				if(arr2[arr2.length-1].length-1>len)len=arr2[arr2.length-1].length-1
+			})
+			for(let i=0; i<=len+1; i++) {
+				let sum = 0;
+				for(let j=0; j<arr2.length; j++) {
+					if(!arr2[j][i]) {
+						arr2[j][i]=0;
+					}
+					sum = Number(sum) + Number(arr2[j][i]) + Number(center)
+					center = 0;
+				}
+				if(sum.toString().length>1) {
+					center = sum.toString().substring(0, 1);
+					sum = sum.toString().substring(1, 2)
+				}
+				arr3.push(sum.toString())
+			}
+			array4 = arr3.reverse();
+			let isZ = true;
+			array4.map(item=>{
+				if(isZ&&item==0) {
+		            return;
+		        } else {
+		            isZ = false
+		        }
+				s += item
+			})
+			console.log(s)
+			return s;
+		};
+		let num1 = "23108814760092";
+		let num2 = "55183904456427981";
+		multiply(num1, num2)
+		console.log("1275234625822209623419790934252")
+		//
+	</script>
+</body>
+</html>
